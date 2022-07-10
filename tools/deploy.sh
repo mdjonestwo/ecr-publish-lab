@@ -10,7 +10,7 @@ else [ "$(sudo ./aws/install)" ]
 fi 
 
 # 3. Using the AWS Command line, publish your Docker container to ECR.
-echo "Authenticating..."
+echo "AUTHENTICATING..."
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 991214512927.dkr.ecr.us-east-1.amazonaws.com
 
 echo "Tagging"
