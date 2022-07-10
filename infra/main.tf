@@ -1,9 +1,9 @@
 terraform {
-#   backend "s3" {
-#     bucket = "ENTER_YOUR_BUCKET_NAME"
-#     key    = "terraform.tfstate"
-#     region = "us-east-1"
-#   }
+  backend "s3" {
+    bucket = "jones-docker-image-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -17,8 +17,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_ecr_repository" "cloud_hippie_ecr_repository" {
-  name                 = "cloud-hippie-ecr-repository"
+resource "aws_ecr_repository" "jones_ecr_repository" {
+  name                 = "jones-ecr-repository"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
